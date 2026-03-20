@@ -56,7 +56,30 @@ users for hours.
 
 ## Phase 2 — VMware vSphere (ESXi) 🔄
 
-*In progress — setting up nested ESXi inside VirtualBox with two guest VMs*
+## Phase 2 — Linux Web Server ✅
+
+Rather than stopping at virtualization theory, I wanted a working service
+running inside the lab — something I could actually hit from a browser.
+
+Set up an Ubuntu Server 22.04 VM and configured nginx as the web server.
+Managed the whole thing over SSH from the start, which is how you'd do it
+in any real environment anyway.
+
+Kept the firewall config minimal and deliberate — port 22 for SSH and
+port 80 for HTTP, everything else blocked. Simple, but it reflects how
+I'd approach a fresh server in production before layering anything else
+on top.
+
+**What I configured:**
+- Ubuntu Server 22.04 from scratch
+- Nginx web server with custom landing page
+- UFW firewall — only ports 22 and 80 open
+- SSH access configured and tested
+
+### Screenshots
+
+![Web server running](web-server.png)
+![Firewall status](firewall.png)
 
 ## Phase 3 — Cisco Network Simulation 📋
 

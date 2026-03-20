@@ -54,24 +54,24 @@ users for hours.
 
 ---
 
-## Phase 2 — VMware vSphere (ESXi) 🔄
+## Phase 2 — VMware ESXi & Linux Web Server ✅
 
-## Phase 2 — Linux Web Server ✅
+Deployed VMware ESXi 6.7 as the hypervisor layer running inside VMware 
+Workstation — this mirrors how ESXi runs on bare-metal in production 
+environments.
 
-Rather than stopping at virtualization theory, I wanted a working service
-running inside the lab — something I could actually hit from a browser.
+Ran into compatibility issues with VirtualBox's nested virtualization,
+which led me to switch to VMware Workstation as the host. A practical
+decision that reflects real troubleshooting — lab environments rarely
+go exactly as planned.
 
-Set up an Ubuntu Server 22.04 VM and configured nginx as the web server.
-Managed the whole thing over SSH from the start, which is how you'd do it
-in any real environment anyway.
-
-Kept the firewall config minimal and deliberate — port 22 for SSH and
-port 80 for HTTP, everything else blocked. Simple, but it reflects how
-I'd approach a fresh server in production before layering anything else
-on top.
+Inside ESXi, deployed an Ubuntu Server 22.04 VM and configured nginx
+as the web server. Managed entirely over SSH, with UFW firewall locked
+down to only the ports needed.
 
 **What I configured:**
-- Ubuntu Server 22.04 from scratch
+- VMware ESXi 6.7 as hypervisor
+- Ubuntu Server 22.04 guest VM
 - Nginx web server with custom landing page
 - UFW firewall — only ports 22 and 80 open
 - SSH access configured and tested

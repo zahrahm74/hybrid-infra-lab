@@ -120,11 +120,11 @@ dedicated CME router with IP phones at both sites.
 
 ### Screenshots
 
-![Network topology](screenshots/topology.png)
-![OSPF neighbors](screenshots/ospf-neighbors.png)
-![Routing table](screenshots/routing-table.png)
-![PC1-HQ DHCP](screenshots/DHCP-CLien-1.png)
-![PC1-Branch DHCP](screenshots/DHCP-Clien-Branch1.png)
+![Network topology](topology.png)
+![OSPF neighbors](ospf-neighbors.png)
+![Routing table](routing-table.png)
+![PC1-HQ DHCP](DHCP-CLien-1.png)
+![PC1-Branch DHCP](DHCP-Clien-Branch1.png)
 
 ## Phase 4 — Azure Hybrid Integration 📋
 

@@ -127,7 +127,7 @@ dedicated CME router with IP phones at both sites.
 ![Routing table](routing-table.png)
 
 
-![PC1-HQ DHCP](DHCP-CLien-1.png)
+![PC1-HQ DHCP](DHCP-CLien1.png)
 
 ![PC1-Branch DHCP](DHCP-Clien-Branch1.png)
 

@@ -83,7 +83,49 @@ down to only the ports needed.
 
 ## Phase 3 — Cisco Network Simulation 📋
 
-*Planned — VLAN segmentation and inter-VLAN routing with Packet Tracer*
+## Phase 3 — Cisco Network Simulation ✅
+
+Designed and built a two-site enterprise network topology in Cisco 
+Packet Tracer, simulating a realistic HQ and branch office setup.
+
+The initial plan included Cisco ASA 5505 firewalls, but after running 
+into Packet Tracer limitations with ASA physical interfaces, I switched 
+to Cisco 2911 routers configured as Zone-Based Firewalls. This is 
+actually a more common real-world pattern for mid-size networks — 
+consolidating routing and firewall functions on a single device rather 
+than deploying dedicated appliances.
+
+**What I built:**
+
+Two sites connected over a WAN link, each with a firewall router, 
+an internal router, a dedicated server switch (VLAN 99), and a client 
+switch (VLANs 10 and 20). OSPF handles routing across all four devices, 
+with full adjacency confirmed between sites.
+
+DHCP runs centrally from Site A — branch clients get their addresses 
+via ip helper-address relayed through the WAN. This meant getting 
+routing, trunk configurations, and VLAN interfaces all working correctly 
+before DHCP would function, which involved a fair amount of 
+troubleshooting.
+
+**Key design decisions:**
+- VLAN 99 isolated for servers — clients never talk directly to servers
+- VLAN 10 for data, VLAN 20 for voice
+- Centralized DHCP with relay — simpler to manage than running separate 
+  servers per site
+- ZBF on border routers instead of dedicated ASA — pragmatic given 
+  Packet Tracer constraints, and documented as such
+
+**VoIP** is planned as the next addition — Call Manager Express on a 
+dedicated CME router with IP phones at both sites.
+
+### Screenshots
+
+![Network topology](screenshots/topology.png)
+![OSPF neighbors](screenshots/ospf-neighbors.png)
+![Routing table](screenshots/routing-table.png)
+![PC1-HQ DHCP](screenshots/DHCP-CLien-1.png)
+![PC1-Branch DHCP](screenshots/DHCP-Clien-Branch1.png)
 
 ## Phase 4 — Azure Hybrid Integration 📋
 

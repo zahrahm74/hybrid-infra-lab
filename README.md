@@ -81,7 +81,6 @@ down to only the ports needed.
 ![Web server running](web-server.png)
 ![Firewall status](firewall.png)
 
-## Phase 3 — Cisco Network Simulation 📋
 
 ## Phase 3 — Cisco Network Simulation ✅
 
